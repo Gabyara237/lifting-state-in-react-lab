@@ -5,13 +5,14 @@ const BurgerStack = (props) => {
 
     return(
         <>
-            {stack.length==0? "No Ingredients":
-                <ul>
-                    {stack.map((ingredient, index)=>(
-                    <Ingredient  key ={index} ingredient={ingredient} action={"remove"} operation={removeFromBurger}/>
+            <ul>
+                {stack.length==0? 
+                    "No Ingredients":
+                    stack.map((ingredient, index)=>(
+                        <Ingredient  key ={index} ingredient={ingredient} action={"remove"} operation={removeFromBurger}/>
                     ))}
-                </ul>
-            }
+            </ul>
+        
         </>
     );
 };
