@@ -1,3 +1,4 @@
+import Ingredient from "../Ingredient/Ingredient";
 
 const IngredientList = (props) => {
     const {addToBurger, availableIngredients} = props;
@@ -5,11 +6,8 @@ const IngredientList = (props) => {
     return(
         <>
             <ul>
-                {availableIngredients.map((ingredient,index)=>(
-                    <li key={index} style={{ backgroundColor: ingredient.color }}>
-                        {ingredient.name}
-                        <button onClick={()=>addToBurger(ingredient)}>+</button>
-                    </li>
+                {availableIngredients.map((ingredient, index)=>(
+                    <Ingredient key ={index} ingredient={ingredient} action={"add"} operation={addToBurger}/>
                 ))}
             </ul>
         </> 

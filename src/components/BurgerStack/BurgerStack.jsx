@@ -1,19 +1,17 @@
-
+import Ingredient from "../Ingredient/Ingredient";
 
 const BurgerStack = (props) => {
     const {stack,removeFromBurger} = props
 
     return(
         <>
-            <ul>
-                {stack.map((ingredient,index)=>(
-                    <li key={index} style={{ backgroundColor: ingredient.color }}>
-                        {ingredient.name}
-                        <button onClick={()=>removeFromBurger(ingredient)}>X</button>
-                    </li>
-                ))}
-            </ul>
-        
+            {stack.length==0? "No Ingredients":
+                <ul>
+                    {stack.map((ingredient, index)=>(
+                    <Ingredient  key ={index} ingredient={ingredient} action={"remove"} operation={removeFromBurger}/>
+                    ))}
+                </ul>
+            }
         </>
     );
 };
