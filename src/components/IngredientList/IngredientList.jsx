@@ -1,6 +1,18 @@
 
 const IngredientList = (props) => {
-  return <ul>// map through props.ingredients</ul>;
+    const {addToBurger, availableIngredients} = props;
+
+    return(
+        <>
+            <ul>
+                {availableIngredients.map((ingredient,index)=>(
+                    <li key={index} style={{ backgroundColor: ingredient.color }}>
+                        {ingredient.name}
+                    </li>
+                ))}
+            </ul>
+        </> 
+    )
 };
 
 export default IngredientList;
